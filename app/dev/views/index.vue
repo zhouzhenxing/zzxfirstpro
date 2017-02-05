@@ -1,4 +1,22 @@
-<script>
+<style lang="sass">
+h1{
+  text-align:center;
+}
+.item-view{
+  width:100%;
+  height:100%;
+  background:#f5f7f7;
+}
+</style>
+
+<template>
+
+  <div class="item-view">
+   <h1>标题</h1>
+  </div>
+</template>
+
+<script type="label">
 export default {
   data () {
     return {
@@ -12,17 +30,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-h1{
-  
-}
-</style>
-
-<template>
-  <div class="item-view">
-   <h1>标题</h1>
-   <div>{{item.name}}</div>
-  </div>
-</template>
-
