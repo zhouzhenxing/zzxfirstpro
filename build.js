@@ -8,18 +8,13 @@ var rootPath   =  path.resolve(__dirname, './build/');
 var devConfig = Object.create(webpackconfig);
 
 devConfig.plugins.push(
-    	new webpack.HotModuleReplacementPlugin(),
-    	new webpack.DefinePlugin({
-			'process.env': {
-				'NODE_ENV': JSON.stringify('development')
-			}
-		})
+    	new webpack.HotModuleReplacementPlugin()
 	);
-	devConfig.devtool           = 'eval';
-	devConfig.debug             = true;
-	devConfig.output.publicPath = '/build/';
-	devConfig.Port              = listenPort;
-	var compiler = webpack(devConfig);
+devConfig.devtool           = 'eval';
+devConfig.debug             = true;
+devConfig.output.publicPath = '/build/';
+devConfig.Port              = listenPort;
+var compiler = webpack(devConfig);
 
 var serverConfig = {
 		contentBase       : rootPath,
@@ -28,8 +23,6 @@ var serverConfig = {
 		historyApiFallback: true,
 		stats             : { colors  : true }
 	}
-
-	console.log(serverConfig);
 var server = new WebpackDevServer(compiler,serverConfig);
 server.listen(8080,'localhost', function(err) {
 	

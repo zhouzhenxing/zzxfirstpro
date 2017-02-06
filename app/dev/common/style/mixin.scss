@@ -1,0 +1,4 @@
+// rem 自适应适配
+@function rem($px, $base:60) {
+    @return ($px / $base) * 1rem;
+}

@@ -12,9 +12,6 @@ const router =new VueRouter({
 });
 let mian=new Vue({
 	  el: '#app',
-	  router:router,
-	  data: {
-	    message: 'Hell 只ddd'
-	  }
+	  router:router
 	});
 router.push({path:'home'})

@@ -1,3 +1,8 @@
+<style lang="sass">
+@import 'mixin.scss';
+
+</style>
+
 <template>
   <div class="item-view">
    <h1>标题2</h1>
@@ -21,7 +26,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

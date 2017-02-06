@@ -1,13 +1,6 @@
 <style lang="sass">
 @import 'mixin.scss';
-.list-item{
-	height:rem(118);
-	line-height:rem(118);
-	font-size:rem(28);
-	padding-left:rem(30);
-	margin-top:rem(20);
-	background:#ffffff;
-}
+
 </style>
 
 <template>
@@ -28,4 +21,3 @@ export default {
   }
 }
 </script>
-

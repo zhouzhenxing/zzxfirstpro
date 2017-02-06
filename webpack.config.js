@@ -12,11 +12,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
            './app/dev/app.js'
          ]
      },
-     output: {
+    output: {
         path:buildPath,
         filename: '[name].js'
-     },
-     module: {
+    },
+    module: {
         loaders: [{
           test: /\.vue$/,
           loader: 'vue'
@@ -44,11 +44,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
             test: /\.html$/,
             loader: 'html'
         }]
-     },
-     babel: {
+    },
+    babel: {
         presets: ['es2015'],
         plugins: ['transform-runtime']
-      },
+    },
     plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
@@ -68,6 +68,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
             'vue': 'vue/dist/vue.js'
         }
     },
+    sassLoader: {
+        // 用于sass import时的路径查找，默认会在 ../common/style 目录下查找
+        includePaths: [ path.resolve(__dirname, './app/dev/common/style') ],
+    },
     vue:{
       loaders:{
         css:ExtractTextPlugin.extract('style', 'css!autoprefixer'),
@@ -75,4 +79,4 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
         scss:ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
       }
     }
- }
+}

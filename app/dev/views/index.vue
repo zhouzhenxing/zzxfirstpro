@@ -1,4 +1,5 @@
 <style lang="sass">
+@import 'mixin.scss';
 h1{
   text-align:center;
 }
@@ -12,21 +13,33 @@ h1{
 <template>
 
   <div class="item-view">
-   <h1>标题</h1>
+   <nav-bar></nav-bar>
+   <list-item v-for="item in list">
+     <div>{{item.value}}</div>
+   </list-item>
   </div>
 </template>
 
-<script type="label">
+<script>
+import NavBar from '../component/nav-bar.vue';
+import ListItem from '../component/list-item.vue';
+
 export default {
   data () {
     return {
-      item: {name:"随便写的一段内容"},
-      comments: [],
-      pollOptions: null
+      list:[
+        {value:'选项一'},
+        {value:'选项二'},
+        {value:'选项三'}
+      ]
     }
   },
   computed: {
    
+  },
+  components:{
+    NavBar,
+    ListItem
   }
 }
 </script>

@@ -1,0 +1,14 @@
+@import 'mixin.scss';
+*{
+	margin:0;
+	padding:0;
+}
+html,body{
+	font-size:rem(12);
+	width:100%;
+	height: 100%;
+}
+#app{
+	height:100%;
+	width:100%;
+}
