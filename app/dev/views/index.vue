@@ -13,9 +13,8 @@ h1{
 <template>
 
   <div class="item-view">
-   <nav-bar></nav-bar>
-   <list-item v-for="item in list">
-     <div>{{item.value}}</div>
+   <nav-bar :NavOption="navoption"></nav-bar>
+   <list-item v-for="item in list" :ItemData="item">
    </list-item>
   </div>
 </template>
@@ -28,10 +27,56 @@ export default {
   data () {
     return {
       list:[
-        {value:'选项一'},
-        {value:'选项二'},
-        {value:'选项三'}
-      ]
+        {
+          name:'折叠组件',
+          link:'/accdisp'
+        },
+        {
+          name:'倒计时组件',
+          link:'/list'
+        },
+        {
+          name:'倒计时',
+          link:'/list'
+        },
+        {
+          name:'选项5',
+          link:'/list'
+        },
+        {
+          name:'选项6',
+          link:'/list'
+        },
+        {
+          name:'选项7',
+          link:'/list'
+        },
+        {
+          name:'选项4',
+          link:'/list'
+        },
+        {
+          name:'选项5',
+          link:'/list'
+        },
+        {
+          name:'选项6',
+          link:'/list'
+        },
+        {
+          name:'选项7',
+          link:'/list'
+        },
+        {
+          name:'选项三',
+          link:'/list'
+        }
+      ],
+      navoption:{
+        title:'主页面导航栏',
+        navstyle:'fixed',
+        navbtn:'left'
+      }
     }
   },
   computed: {

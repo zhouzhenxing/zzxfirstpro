@@ -11,8 +11,8 @@
 </style>
 
 <template>
-  <div class="list-item">
-  	<slot></slot>
+  <div class="list-item" v-on:click="gotopage">
+  	<div>{{ItemData.name}}</div>
   </div>
 </template>
 
@@ -23,8 +23,17 @@ export default {
       item: "选项一"
     }
   },
+  methods:{
+    gotopage(){
+      console.log('this',this);
+      this.$router.push({path:this.ItemData.link});
+    }
+  },
   props:{
-      ItemData:Object
+      ItemData:{
+        type:Object,
+        required:false
+      }
   }
 }
 </script>
